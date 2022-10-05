@@ -5,10 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>des</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
     <script src="jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <input type="file" id="msg" value="seleccione archivo" />
     <input type="text" id="key" placeHolder="clave" />
+    <input type="button" id="en" vale="codificar"/>
+    <input type="button" id="de" vale="decodificar"/>
+    <p id="res"></p>
+
+    <script>
+        $("#en").click(function(){
+            var key=$("#key").value
+            $("res").text(CryptoJS.DES.encrypt("DataFromInput", key)​)
+        })
+    </script>
 </body>
 </html>
