@@ -10,7 +10,7 @@ $("#en").click(function(){
         var msg=PromiseResult
         console.log(msg)
         var en=CryptoJS.DES.encrypt(msg, key)
-        $("#res").val(en)
+        $("#res").text(en)
         download("cifrado.txt",en)
     })
 })
@@ -32,7 +32,7 @@ $("#de").click(function(){
         var msg=PromiseResult
         console.log(msg)
         var de=hex2a(CryptoJS.DES.decrypt(msg, key))
-        $("#res").val(de)
+        $("#res").text(de)
         download("descifrado.txt",de)
     })
 })
