@@ -11,6 +11,7 @@ $("#en").click(function(){
         console.log(msg)
         var en=CryptoJS.DES.encrypt(msg, key)
         $("#res").text(en)
+        download("cifrado.txt",en)
     })
 })
 function hex2a(hexx) {
@@ -32,6 +33,7 @@ $("#de").click(function(){
         console.log(msg)
         var de=hex2a(CryptoJS.DES.decrypt(msg, key))
         $("#res").text(de)
+        download("descifrado.txt",de)
     })
 })
 function download(filename, text) {
